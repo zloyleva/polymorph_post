@@ -2,4 +2,6 @@
 <div class="comment_body">
     <p><small><i><b>Data:</b> <%= comment.created_at.strftime('%v %T') %><br>
     <b>Comment:</b> <%= comment.body %></i></small></p>
+
+    <%= render :partial => 'comments/comment', :collection => comment.comments %>
 </div>

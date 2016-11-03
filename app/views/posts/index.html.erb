@@ -18,8 +18,8 @@
   </div>
 </div>
 <% @posts.each do |post| %>
-  <div class="container padding-top-20">
-    <div class="row post_body">
+  <div class="container margin-top-20 post_body">
+    <div class="row ">
       <div class="padding-bottom-post">
         <small><i>Data: <%= post.created_at.strftime('%v %T') %></i></small><br>
         <%= post.body %>
