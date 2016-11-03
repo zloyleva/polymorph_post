@@ -4,4 +4,16 @@
       <h1>Welcome to polymorphic microblog</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for :post, url: posts_path do |f| %>
+        <p>
+          <%= f.text_area :body,class: 'form-control', placeholder: "Text your Post here" %>
+        </p>
+        <p>
+          <%= f.submit class: 'btn btn-primary' %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>
