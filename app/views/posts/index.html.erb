@@ -11,16 +11,16 @@
           <%= f.text_area :body,class: 'form-control', placeholder: "Text your Post here" %>
         </p>
         <p>
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit "Create a new post", class: 'btn btn-primary' %>
         </p>
       <% end %>
     </div>
   </div>
 </div>
 <% @posts.each do |post| %>
-  <div class="container padding-top-10px">
+  <div class="container padding-top-20">
     <div class="row post_body">
-      <div class="padding-bottom-10">
+      <div class="padding-bottom-post">
         <small><i>Data: <%= post.created_at.strftime('%v %T') %></i></small><br>
         <%= post.body %>
       </div>
@@ -30,10 +30,10 @@
           <b>Comment:</b> <%= comment.body %></i></small></p>
         <% end %>
       </div>
-      <div class="cooments_form">
+      <div class="col-md-6 cooments_form">
         <%= form_for :comment, url: post_comments_path(post) do |f|	%>
-          <%= f.text_area :body %>
-          <%= f.submit %>
+          <%= f.text_area :body,class: 'form-control', placeholder: "Text your comment here" %><br>
+          <%= f.submit "Create comment", class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
