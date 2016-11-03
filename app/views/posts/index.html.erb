@@ -24,12 +24,9 @@
         <small><i>Data: <%= post.created_at.strftime('%v %T') %></i></small><br>
         <%= post.body %>
       </div>
-      <div class="comment_body">
-        <% post.comments.each do |comment| %>
-          <p><small><i><b>Data:</b> <%= comment.created_at.strftime('%v %T') %><br>
-          <b>Comment:</b> <%= comment.body %></i></small></p>
-        <% end %>
-      </div>
+
+      <%= render :partial => 'comments/comment', :collection => post.comments %>
+
       <div class="col-md-6 cooments_form">
         <%= form_for :comment, url: post_comments_path(post) do |f|	%>
           <%= f.text_area :body,class: 'form-control', placeholder: "Text your comment here" %><br>
