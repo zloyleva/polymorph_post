@@ -19,10 +19,16 @@
 </div>
 <% @posts.each do |post| %>
   <div class="container padding-top-10px">
-    <div class="row">
-      <div class="post_body">
+    <div class="row post_body">
+      <div class="padding-bottom-10">
         <small><i>Data: <%= post.created_at.strftime('%v %T') %></i></small><br>
         <%= post.body %>
+      </div>
+      <div class="comment_body">
+        <% post.comments.each do |comment| %>
+          <p><small><i><b>Data:</b> <%= comment.created_at.strftime('%v %T') %><br>
+          <b>Comment:</b> <%= comment.body %></i></small></p>
+        <% end %>
       </div>
     </div>
   </div>
