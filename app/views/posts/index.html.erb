@@ -17,3 +17,13 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="post_body">
+        <small><i>Data: <%= post.created_at.strftime('%v %T') %></i></small><br>
+        <%= post.body %>
+      </div>
+    </div>
+  <% end %>
+</div>
