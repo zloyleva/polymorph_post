@@ -1,7 +1,16 @@
 
 <div class="comment_body">
-    <p><small><i><b>Data:</b> <%= comment.created_at.strftime('%v %T') %><br>
-    <b>Comment:</b> <%= comment.body %></i></small></p>
+    <p class="inline"><small><i><b>Data:</b> <%= comment.created_at.strftime('%v %T') %><br>
+    <b>Comment:</b> <%= comment.body %></i></small>
+
+    <div class="cooments_form inline padding-left-20">
+      <%= form_for :comment, url: comment_comments_path(comment) do |f|	%>
+        <%= f.text_field :body, class: 'form-control inline inline-field', placeholder: "Text your comment here" %>
+        <%= f.submit "Create comment", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+
+    </p>
 
     <%= render :partial => 'comments/comment', :collection => comment.comments %>
 </div>
