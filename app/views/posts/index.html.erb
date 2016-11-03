@@ -27,12 +27,12 @@
 
       <%= render :partial => 'comments/comment', :collection => post.comments %>
 
-      <div class="col-md-6 cooments_form">
-        <%= form_for :comment, url: post_comments_path(post) do |f|	%>
-          <%= f.text_area :body,class: 'form-control', placeholder: "Text your comment here" %><br>
-          <%= f.submit "Create comment", class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+    </div>
+    <div class="col-md-6 cooments_form">
+      <%= form_for :comment, url: post_comments_path(post) do |f|	%>
+        <%= f.text_area :body,class: 'form-control', placeholder: "Text your comment here" %><br>
+        <%= f.submit "Create comment", class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 <% end %>
